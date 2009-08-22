@@ -2,14 +2,14 @@
 %html
 %head
   %title= title_meta
+  = javascript_include_tag :all, :cache => true
+  = javascript_tag 'jQuery.noConflict();'
 
 %body
   #header
     #app_title= t(:'app.title')
     - if !page_title.blank?
       %h1= page_title
-    = javascript_include_tag :all, :cache => true
-    = javascript_tag 'jQuery.noConflict();'
 
   #content
     = yield
