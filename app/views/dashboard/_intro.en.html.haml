@@ -1,9 +1,9 @@
 Hello 
 %strong.user= current_user.login + ','
 this is your dashboard. The command center where you can find your
-%strong.anthills= link_to(t(:'dashboard.intro.anthills'), :anthills) + ','
+%strong.anthills= link_to('anthills', :anthills) + ','
 the latest
-%strong.events= t(:'dashboard.intro.events') + ','
+%strong.events= 'events' + ','
 in all your games and of course any
-%strong.messages= t(:'dashboard.intro.communication')
+%strong.messages= 'communication'
 that you have with other players.
