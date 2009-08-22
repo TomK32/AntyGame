@@ -1,5 +1,6 @@
 class Map < ActiveRecord::Base
   has_many :items
+  has_many :anthills
 
   validates_presence_of :name, :width, :height
   validates_uniqueness_of :name
