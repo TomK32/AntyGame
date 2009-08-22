@@ -1,0 +1,14 @@
+= error_messages_for :map
+
+- form_for :map, :url => maps_path do |f|
+  %p
+    = label_tag 'name'
+    = f.text_field :name
+  %p
+    = label_tag 'width'
+    = f.text_field :width
+  %p
+    = label_tag 'height'
+    = f.text_field :height
+  %p
+    = submit_tag

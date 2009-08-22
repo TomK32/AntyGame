@@ -1,0 +1,5 @@
+%ul
+  - current_objects.each do |map|
+    %li
+      = link_to map.name, object_path(map)
+= link_to 'Create new map', new_object_path
