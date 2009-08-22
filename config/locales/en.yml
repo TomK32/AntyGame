@@ -23,7 +23,7 @@ en:
   dashboard:
     index:
       page_title: 'Dashboard'
-      anthills: 'You anthills'
+      anthills: 'Your anthills'
       create_new_anthill: 'Create a new anthill'
     intro:
       anthills: 'anthills'
