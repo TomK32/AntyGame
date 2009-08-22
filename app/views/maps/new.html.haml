@@ -2,13 +2,20 @@
 
 - form_for :map, :url => maps_path do |f|
   %p
-    = label_tag 'name'
+    = label_tag :name
     = f.text_field :name
   %p
-    = label_tag 'width'
+    = label_tag :width
     = f.text_field :width
   %p
-    = label_tag 'height'
+    = label_tag :height
     = f.text_field :height
   %p
+    = label_tag :max_anthills
+    = f.text_field :max_anthills
+  %p
+    = label_tag :state
+    = f.select :state, Map.aasm_states.collect{|s|[t(:"maps.states.#{s.name}"), s.name]}
+
+  %p.submit
     = submit_tag

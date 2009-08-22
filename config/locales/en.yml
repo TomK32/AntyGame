@@ -24,9 +24,20 @@ en:
     index:
       page_title: 'Dashboard'
       anthills: 'You anthills'
-      create_new_anthill: 'Create a new anthill (on a different map)'
+      create_new_anthill: 'Create a new anthill'
     intro:
       anthills: 'anthills'
       events: 'events'
       communication: 'communication'
-      
+  anthills:
+    new:
+      page_title: 'Create a new anthill'
+      submit: 'Create my anthill'
+    form:
+      name: 'Name (e.g. Southwestern Union Anthill)'
+  maps:
+    index:
+      stats: '{{anthills_count}} of {{max_anthills}}'
+    states:
+      active: 'active'
+      inactive: 'inactive'

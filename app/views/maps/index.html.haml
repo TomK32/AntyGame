@@ -2,4 +2,5 @@
   - current_objects.each do |map|
     %li
       = link_to map.name, object_path(map)
+      = t(:'.stats', :anthills_count => map.anthills.count, :max_anthills => map.max_anthills)
 = link_to 'Create new map', new_object_path
