@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090822120826) do
+ActiveRecord::Schema.define(:version => 20090822132738) do
 
   create_table "anthills", :force => true do |t|
     t.integer  "user_id",                              :null => false
@@ -31,6 +31,27 @@ ActiveRecord::Schema.define(:version => 20090822120826) do
     t.integer  "count"
     t.integer  "longitude"
     t.integer  "latitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", :force => true do |t|
+    t.integer  "map_id"
+    t.integer  "user_id"
+    t.integer  "ant_id"
+    t.integer  "anthill_id"
+    t.integer  "longitude",  :null => false
+    t.integer  "latitude",   :null => false
+    t.integer  "count"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "maps", :force => true do |t|
+    t.string   "name",       :null => false
+    t.integer  "width",      :null => false
+    t.integer  "height",     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
