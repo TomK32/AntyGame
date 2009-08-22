@@ -1,5 +1,7 @@
 class Map < ActiveRecord::Base
   has_many :items
+  has_many :stones
+  has_many :foods
   has_many :anthills
 
   validates_presence_of :name, :width, :height
@@ -18,24 +20,24 @@ class Map < ActiveRecord::Base
   after_create :generate
 
   def generate
-    positions = {}
-
-    # Create stones on 30-40% of the map
-    (width * height * (0.3 + rand(0.1))).to_i.times do
-      begin
-        longitude, latitude = rand(width), rand(height)
-      end while positions[longitude * latitude]
-
-      items << Stone.new(:latitude => latitude, :longitude => longitude)
+    position = {:longitude => 0, :latitude => 0}
+    
+    while !(position[:latitude] > height) and !(position[:longitude] > width) do
+      position[:longitude] += rand((height + width) / 2)
+      if position[:longitude] > width
+        position[:longitude] -= width
+        position[:latitude] += 1
+      end
+      case position[:longitude] % 10
+        when 0..5
+          items << Stone.new(position)
+        else
+          items << Food.new(position.merge(:count => rand(20) + 5))
+      end
     end
-
-    # Create 1-10 units of food on 10-20% of the map
-    ((width * height * 0.1) + rand((width * height) * 0.1)).to_i.times do
-      begin
-        longitude, latitude = rand(width), rand(height)
-      end while positions[longitude * latitude]
-
-      items << Food.new(:latitude => latitude, :longitude => longitude, :count => rand(10) + 1)
-    end
+  end
+  private
+  class Position < Hash
+    attr_accessor :longitude, :latitude
   end
 end
