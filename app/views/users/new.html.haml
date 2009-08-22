@@ -21,5 +21,9 @@
     = label_tag 'password_confirmation', t(:'.confirm_password')
     = f.password_field :password_confirmation
 
+  - unless @user.identity_url.blank?
+    %p
+      = f.label :identity_url, t(:'open_id')
+      = f.text_field :identity_url
   %p.submit
     = submit_tag t(:'.submit')
