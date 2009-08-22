@@ -1,0 +1,4 @@
+- if logged_in?
+  %li= link_to t(:'navigation.account'), account_url
+- else
+  %li= link_to t(:'navigation.login'), login_url

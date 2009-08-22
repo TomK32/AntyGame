@@ -1,0 +1,21 @@
+!!!
+%html
+%head
+  %title= title_meta
+
+%body
+  #header
+    #app_title= t(:'app.title')
+    - if !page_title.blank?
+      %h1= page_title
+
+  #content
+    = yield
+  
+  %ul#navigation
+    = render :partial => 'shared/navigation'
+    = yield :sub_navigation
+  #footer
+    (C) 2009 by
+    = link_to 'antga.me', root_url
+    written by Peter Krenn and Thomas R. Koll during railsrumble 2009
