@@ -52,32 +52,6 @@ describe UsersHelper do
     end
   end
 
-  describe "link_to_login_with_IP" do
-    it "should link to the login_path" do
-      link_to_login_with_IP().should have_tag("a[href='/login']")
-    end
-    it "should use given link text if :content_text is specified" do
-      link_to_login_with_IP('Hello there!').should have_tag("a", 'Hello there!')
-    end
-    it "should use the login as link text with no :content_method specified" do
-      link_to_login_with_IP().should have_tag("a", '0.0.0.0')
-    end
-    it "should use the ip address as title" do
-      link_to_login_with_IP().should have_tag("a[title='0.0.0.0']")
-    end
-    it "should by default be like school in summer and have no class" do
-      link_to_login_with_IP().should_not have_tag("a.nickname")
-    end
-    it "should have some class if you tell it to" do
-      result = link_to_login_with_IP(nil, :class => 'foo bar')
-      result.should have_tag("a.foo")
-      result.should have_tag("a.bar")
-    end
-    it "should have some class if you tell it to" do
-      result = link_to_login_with_IP(nil, :tag => 'abbr')
-      result.should have_tag("abbr[title='0.0.0.0']")
-    end
-  end
 
   describe "link_to_current_user, When logged in" do
     before do

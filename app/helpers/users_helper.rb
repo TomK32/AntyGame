@@ -53,31 +53,8 @@ module UsersHelper
   end
 
   #
-  # Link to login page using remote ip address as link content
-  #
-  # The :title (and thus, tooltip) is set to the IP address 
-  #
-  # Examples:
-  #   link_to_login_with_IP
-  #   # => <a href="/login" title="169.69.69.69">169.69.69.69</a>
-  #
-  #   link_to_login_with_IP :content_text => 'not signed in'
-  #   # => <a href="/login" title="169.69.69.69">not signed in</a>
-  #
-  def link_to_login_with_IP content_text=nil, options={}
-    ip_addr           = request.remote_ip
-    content_text    ||= ip_addr
-    options.reverse_merge! :title => ip_addr
-    if tag = options.delete(:tag)
-      content_tag tag, h(content_text), options
-    else
-      link_to h(content_text), login_path, options
-    end
-  end
-
-  #
   # Link to the current user's page (using link_to_user) or to the login page
-  # (using link_to_login_with_IP).
+  # (using link_to_login).
   #
   def link_to_current_user(options={})
     if current_user
@@ -86,7 +63,7 @@ module UsersHelper
       content_text = options.delete(:content_text) || 'not signed in'
       # kill ignored options from link_to_user
       [:content_method, :title_method].each{|opt| options.delete(opt)} 
-      link_to_login_with_IP content_text, options
+      link_to_login content_text, options
     end
   end
 

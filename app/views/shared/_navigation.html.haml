@@ -1,4 +1,8 @@
 - if logged_in?
-  %li= link_to t(:'navigation.account'), account_url
+  %li
+    Logged in as
+    = link_to_current_user :content_method => :login
+  %li= link_to t(:'.logout'), logout_path
 - else
-  %li= link_to t(:'navigation.login'), login_url
+  %li= link_to t(:'.login'),  login_path
+  %li= link_to t(:'.signup'), signup_path
