@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     if using_open_id?
       open_id_authentication(params[:openid_identifier] || params[:openid_url])
     else
-      password_authentication(params[:name], params[:password])
+      password_authentication(params[:login], params[:password])
     end
   end
 
@@ -57,8 +57,8 @@ protected
       end
     end
   end
-  def password_authentication
-    user = User.authenticate(params[:login], params[:password])
+  def password_authentication(login, password)
+    user = User.authenticate(login, password)
     if user
       # Protects against session fixation attacks, causes request forgery
       # protection if user resubmits an earlier form using back
