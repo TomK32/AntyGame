@@ -1,7 +1,7 @@
 The players (50 in the first version) are put together on a surface map randomly.
 
 If a player doesn't play for more than one day a babysitter will jump in.
-If a player doesn't play for more than week the most active babysitter will be overed
+If a player doesn't play for more than week the most active babysitter will be offered
 to take over the hill.
 
 The player starts in an anthill.
