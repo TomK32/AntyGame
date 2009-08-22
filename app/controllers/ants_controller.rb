@@ -1,0 +1,2 @@
+class AntsController < ApplicationController
+end

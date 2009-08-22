@@ -9,7 +9,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090822073324) do
+ActiveRecord::Schema.define(:version => 20090822110307) do
+
+  create_table "anthills", :force => true do |t|
+    t.integer  "user_id",                              :null => false
+    t.integer  "babysitter_id"
+    t.integer  "longitude",                            :null => false
+    t.integer  "latitude",                             :null => false
+    t.string   "name",                                 :null => false
+    t.string   "state",          :default => "active"
+    t.integer  "worker_count",   :default => 0,        :null => false
+    t.integer  "soldier_count",  :default => 0,        :null => false
+    t.datetime "last_action_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ants", :force => true do |t|
+    t.string   "type"
+    t.integer  "dna",        :limit => 8, :null => false
+    t.integer  "count"
+    t.integer  "longitude"
+    t.integer  "latitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
