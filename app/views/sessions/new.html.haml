@@ -1,16 +1,16 @@
 
-- @page_title=t(:'session.title.login')
+- @page_title=t(:'.page_title')
 
 - form_tag session_path do
 
   %fieldset
-    %legend= t(:'use_openid')
+    %legend= t(:'.use_openid')
 
     %p
       = label_tag :openid_identifier
       = text_field_tag :openid_identifier
   %fieldset
-    %legen= t(:'use_login')
+    %legen= t(:'.use_login')
     %p
       = label_tag 'login'
       = text_field_tag 'login', @login

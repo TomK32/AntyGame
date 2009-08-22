@@ -4,9 +4,17 @@
 en:
   app:
     title: 'antga.me'
-  navigation:
-    login: 'Login'
-    
-  session:
-    title:
+  shared:
+    navigation:
       login: 'Login'
+      logout: 'Logout'
+    
+  sessions:
+    new:
+      page_title: 'Login'
+      use_login: 'Use a normal login'
+      use_openid: 'Use OpenID'
+      
+  users:
+    show:
+      page_title: 'User {{user}}'
