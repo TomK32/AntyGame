@@ -1,0 +1,7 @@
+
+%div[anthill]
+  .name= link_to anthill.name, anthill_path(anthill)
+  %ul
+    %li.created_at.datetime= anthill.created_at
+    %li.worker_count= t(:'.workers', :count => anthill.worker_count)
+    %li.soldier_count= t(:'.soldiers', :count => anthill.soldier_count)

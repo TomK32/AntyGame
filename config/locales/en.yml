@@ -8,6 +8,7 @@ en:
     navigation:
       login: 'Login'
       logout: 'Logout'
+      signup: 'Signup'
       dashboard: 'Dashboard'
     
   sessions:
@@ -36,20 +37,30 @@ en:
       anthills: 'anthills'
       events: 'events'
       communication: 'communication'
+    anthill:
+      soldiers: '{{count}} soldiers'
+      workers: '{{count}} workers'
   anthills:
     new:
       page_title: 'Create a new anthill'
       submit: 'Create my anthill'
     form:
+      details: 'Details on your new anthill'
       name: 'Name (e.g. Southwestern Union Anthill)'
+      maps: 'Maps (only those still accepting new players are shown)'
     show:
       page_title: 'Anthill "{{name}}" by {{user}}'
       queen: 'Queen'
       queen_missing: "You don't have a queen yet in your anthill."
       plant_queen: 'Plant a new queen in your anthill'
+  ants:
+    new:
+      page_title: 'Plant a new {{name}}'
+      submit: 'Plant {{name}}'
   maps:
     index:
       stats: '{{anthills_count}} of {{max_anthills}}'
     states:
+      open: 'open for all'
       active: 'active'
       inactive: 'inactive'

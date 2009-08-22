@@ -1,11 +1,13 @@
 
-%p
-  = form.label :name, t(:'.name')
-  = form.text_field :name
+%fieldset
+  %legend= t(:'.details')
+  %p
+    = form.label :name, t(:'.name')
+    = form.text_field :name
 
 %fieldset
   %legend= t(:'.maps')
   - Map.open.all(:limit => 10).each do |map|
-    %p
+    %p.checkbox
       = form.radio_button :map_id, map.id
       = form.label "map_id_#{map.id}", map.name

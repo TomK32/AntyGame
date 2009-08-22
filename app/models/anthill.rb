@@ -21,7 +21,5 @@ class Anthill < ActiveRecord::Base
     
     self.latitude = rand(self.map.width)
     self.longitude = rand(self.map.height)
-
-    puts y self
   end
 end
