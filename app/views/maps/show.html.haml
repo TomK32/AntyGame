@@ -6,10 +6,10 @@
   context = $("canvas").getContext("2d");
   items.each(function(item) {
     if (item.type == "Stone") {
-      context.fillStyle = "c0c0c0";
+      context.fillStyle = "#c0c0c0";
     }
     else if (item.type == "Food") {
-      context.fillStyle = "00c000";
+      context.fillStyle = "#00c000";
     }
 
     context.fillRect(item.latitude * 8, item.longitude * 8, 8, 8);
