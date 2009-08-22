@@ -19,6 +19,13 @@ en:
   users:
     show:
       page_title: 'User {{user}}'
+    new:
+      page_title: 'Create a new account'
+      login: 'Loginname (e.g. Johnny32 or AntyAndy)'
+      email: 'Email adress'
+      password: 'Password'
+      confirm_password: 'Confirm password'
+      submit: 'Create account'
       
   dashboard:
     index:

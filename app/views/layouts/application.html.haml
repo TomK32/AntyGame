@@ -4,10 +4,12 @@
   %title= title_meta
   = javascript_include_tag :all, :cache => true
   = javascript_tag 'jQuery.noConflict();'
+  = stylesheet_link_tag %w(layout forms maps), :cache => true
 
 %body
   #header
-    #app_title= t(:'app.title')
+    #app_title= link_to t(:'app.title'), root_url
+    
     - if !page_title.blank?
       %h1= page_title
 

@@ -1,0 +1,18 @@
+@import colors.sass
+fieldset
+  :border-width 1px 0 0 0
+  :border-color = !color_title_background + #333
+  legend
+    :font-size 1.2em
+    :font-weight bold
+
+label
+  display: block
+.checkbox label
+  display: inline
+
+input[type=text], input[type=password]
+  :font-size 1.4em
+
+input:focus, input:active
+  :background-color = !color_title_background

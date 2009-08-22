@@ -1,5 +1,4 @@
-%p
-  = @map.name
+- @page_title = @map.name
 %canvas#canvas{:width => @map.width * 8, :height => @map.height * 8}
 = javascript_tag "items = #{@items};"
 :javascript
