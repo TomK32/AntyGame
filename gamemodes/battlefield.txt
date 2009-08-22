@@ -1,0 +1,5 @@
+As a player 
+In order to send my enemies to ant heaven
+I want to see a complete map of the battle field
+I want to move my units turn based
+I want to send ants home to call for backup

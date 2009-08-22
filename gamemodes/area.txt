@@ -1,0 +1,9 @@
+As a player
+In order to see what's going on in ma hood
+I want to see a map of the area with fog of war
+I want to send scouts to discover new areas
+I want to send scouts to discover new food sources
+I want to send soldiers to protect paths
+I want to send soldiers to protect food sources
+I want to see enemy ants
+I sant to see enemy ant hills

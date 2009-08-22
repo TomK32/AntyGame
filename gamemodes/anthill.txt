@@ -1,0 +1,12 @@
+As a player 
+In order to manage my anthill
+I want to manage my ant production
+I want to give orders to my ants
+I want my ants to specialize on certain tasks
+I want my workers to build new tunnels
+I want my workers to build new infrastructure
+I want my workers to build defense structure on the surface
+I want my workers to sit the eggs
+I want my workers to search for new food source
+I want my soldiers to scout the area around
+I want to send my soldiers to the battlefield
