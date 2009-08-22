@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :ants
-  map.resources :anthills
+  map.resources :anthills, :has_many => :ants
   map.resources :maps
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'

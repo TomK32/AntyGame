@@ -1,6 +1,5 @@
 class Map < ActiveRecord::Base
   has_many :items
-  has_many :anthills, :class_name => "anthill", :foreign_key => "reference_id"
 
   validates_presence_of :name, :width, :height
   validates_uniqueness_of :name
@@ -9,7 +8,8 @@ class Map < ActiveRecord::Base
 
   include AASM
   aasm_column :state
-  aasm_initial_state :active
+  aasm_initial_state :open
+  aasm_state :open
   aasm_state :active
   aasm_state :inactive
 
@@ -20,7 +20,7 @@ class Map < ActiveRecord::Base
     positions = {}
 
     # Create stones on 30-40% of the map
-    ((width * height * 0.3) + rand((width * height) * 0.1)).to_i.times do
+    (width * height * (0.3 + rand(0.1))).to_i.times do
       begin
         longitude, latitude = rand(width), rand(height)
       end while positions[longitude * latitude]

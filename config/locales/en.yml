@@ -35,6 +35,11 @@ en:
       submit: 'Create my anthill'
     form:
       name: 'Name (e.g. Southwestern Union Anthill)'
+    show:
+      page_title: 'Anthill "{{name}}" by {{user}}'
+      queen: 'Queen'
+      queen_missing: "You don't have a queen yet in your anthill."
+      plant_queen: 'Plant a new queen in your anthill'
   maps:
     index:
       stats: '{{anthills_count}} of {{max_anthills}}'
