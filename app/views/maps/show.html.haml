@@ -1,0 +1,16 @@
+%p
+  = @map.name
+%canvas#canvas{:width => @map.width * 8, :height => @map.height * 8}
+= javascript_tag "items = #{@items};"
+:javascript
+  context = $("canvas").getContext("2d");
+  items.each(function(item) {
+    if (item.type == "Stone") {
+      context.fillStyle = "c0c0c0";
+    }
+    else if (item.type == "Food") {
+      context.fillStyle = "00c000";
+    }
+
+    context.fillRect(item.latitude * 8, item.longitude * 8, 8, 8);
+  });

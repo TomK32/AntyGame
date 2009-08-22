@@ -14,4 +14,9 @@ class MapsController < ApplicationController
       render :action => 'new'
     end
   end
+
+  def show
+    @map = Map.find(params[:id])
+    @items = @map.items.to_json(:only => [:longitude, :latitude, :type])
+  end
 end
