@@ -80,7 +80,7 @@ protected
   
     def successful_login
       session[:user_id] = @current_user.id
-      redirect_to(root_url)
+      redirect_to(dashboard_url)
     end
 
     def failed_login(message)
