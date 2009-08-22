@@ -1,0 +1,8 @@
+- @page_title = t(:'.page_title', :user => current_user.login )
+
+%p= render :partial => 'intro'
+
+%h2.anthills= t(:'.anthills')
+=link_to t(:'.create_new_anthill'), new_anthill_path
+- current_user.anthills.each do |anthill|
+  = render :partial => 'anthill', :object => anthill

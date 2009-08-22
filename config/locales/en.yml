@@ -8,6 +8,7 @@ en:
     navigation:
       login: 'Login'
       logout: 'Logout'
+      dashboard: 'Dashboard'
     
   sessions:
     new:
@@ -18,3 +19,14 @@ en:
   users:
     show:
       page_title: 'User {{user}}'
+      
+  dashboard:
+    index:
+      page_title: 'Dashboard'
+      anthills: 'You anthills'
+      create_new_anthill: 'Create a new anthill (on a different map)'
+    intro:
+      anthills: 'anthills'
+      events: 'events'
+      communication: 'communication'
+      
