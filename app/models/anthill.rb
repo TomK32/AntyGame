@@ -16,6 +16,7 @@ class Anthill < ActiveRecord::Base
   has_one :item
   
   before_validation_on_create :set_position
+  after_create :create_item
 
   def set_position
     # place the anthill randomly
@@ -23,5 +24,9 @@ class Anthill < ActiveRecord::Base
     
     self.latitude = rand(self.map.width)
     self.longitude = rand(self.map.height)
+  end
+
+  def create_item
+    Item.create(:anthill => self, :map => self.map, :latitude => latitude, :longitude => longitude)
   end
 end
