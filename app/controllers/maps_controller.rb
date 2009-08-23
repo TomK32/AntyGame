@@ -1,5 +1,5 @@
 class MapsController < ApplicationController
-  before_filter :login_required
+  skip_before_filter :login_required, :only => [:show, :index]
 
   make_resourceful do
     actions :index, :new

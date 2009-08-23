@@ -3,6 +3,8 @@
 
 class ApplicationController < ActionController::Base
 
+  before_filter :login_required
+
   include ExceptionNotifiable
 
   # AuthenticatedSystem must be included for RoleRequirement, and is provided by installing acts_as_authenticates and running 'script/generate authenticated account user'.
