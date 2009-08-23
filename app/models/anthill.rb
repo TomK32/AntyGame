@@ -17,7 +17,7 @@ class Anthill < ActiveRecord::Base
   
   before_validation_on_create :set_position
   before_validation_on_create :set_tasks
-  after_create :create_item, :create_workers
+  after_create :create_item
 
   def validate
     errors.add(I18n.t(:'ants.errors.tasks_unbalanced')) if (self.food + self.building + self.nursing) != 100
@@ -46,28 +46,34 @@ class Anthill < ActiveRecord::Base
     # thus more space for food and nursing
 
     all_worker_skills = {}
+    tmp = {}
     self.workers.each do |worker|
       worker.skills.each do |skill, value|
-        all_worker_skills[skill] ||= 0
-        all_worker_skills[skill] += value * worker.count
+        tmp[skill] ||= [0,0]
+        tmp[skill][0] += value
+        tmp[skill][1] += worker.count
       end
+      tmp.each {|skill, pairs| all_worker_skills[skill] = pairs[0] / [pairs[1], 1].max }
       # while we are at it, why not kill some ants?
-      worker.count -= worker.count * rand(worker.skills[:lifetime]) / worker.skills[:lifetime]
+      worker.count -= 1 + (worker.count * rand(worker.skills[:lifetime]) / (worker.skills[:lifetime] * 2))
       worker.save
     end
 
     self.building_count += ([0,all_worker_skills[:strength]].max + [0,all_worker_skills[:size]].max) / ([self.building, 1].max / 100.to_f)
+    logger.debug( 'grown in size by %i' % (self.building_count - self.building_count_was))
 
 
     # increase food.
     # The faster and stronger the more food we'll get
     self.food_stock += ([0,all_worker_skills[:strength]].max + [0,all_worker_skills[:speed]].max) / ([self.food, 1].max / 100.to_f)
+    logger.debug( 'increased food by %i' % (self.food_stock - self.food_stock_was))
 
     # now, nursing is a bit more complicated.
     # the more fertile your queens the more baby ants we _could_ have
     # but the bigger and faster our workers the more will actually be born
     # also we need enough food and space
     self.max_nursing = (self.building_count + self.food_stock) / (self.ants.count / 2)
+    logger.debug( 'max nursing is now %i bigger' % (self.max_nursing - self.max_nursing_was))
 
     new_worker_sum = 0
     self.queens.each do |queen|

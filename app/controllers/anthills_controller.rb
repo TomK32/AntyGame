@@ -19,4 +19,9 @@ class AnthillsController < ApplicationController
     end
   end
 
+
+  def cycle
+    logger.debug current_object.cycle
+    render :action => 'show' and return
+  end
 end

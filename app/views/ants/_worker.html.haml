@@ -1,0 +1,8 @@
+
+%dl
+  %dt= worker.formatted_dna
+  %dd
+    = t(:'.workers', :count => worker.count)
+    %br
+    - worker.skills.each do |skill, value|
+      = '%s: %s' % [t(:"ants.skills.#{skill}"), value]

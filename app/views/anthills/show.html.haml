@@ -1,5 +1,7 @@
 - @page_title = t(:'.page_title', :name => current_object.name, :user => current_object.user.login)
 
+= link_to 'cycle', cycle_anthill_url(current_object)
+
 %h2= t(:'.statistics')
 %ul
   %li.food_stock= t(:'.food_stock', :count => current_object.food_stock)

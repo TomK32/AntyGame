@@ -7,7 +7,7 @@ class Ant < ActiveRecord::Base
 
   validates_presence_of :dna
   before_create :do_evolve
-
+  
   GENES = %w(A C G T)
   # the more '.' you have in the skills the less variation there will be.
   # You can also say that strength and size collide by colling their 

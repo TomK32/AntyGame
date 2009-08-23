@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resource :subscription
-  map.resources :anthills, :has_many => :ants
+  map.resources :anthills, :has_many => :ants, :member => {:cycle => :get}
   map.resources :maps
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
