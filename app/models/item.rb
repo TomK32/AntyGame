@@ -5,7 +5,4 @@ class Item < ActiveRecord::Base
   belongs_to :user
   belongs_to :ant
   belongs_to :anthill
-
-  validates_presence_of :latitude, :longitude
-  validates_numericality_of :latitude, :longitude, :only_integer => true
 end
