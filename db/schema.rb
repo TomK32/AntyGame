@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090823154607) do
+ActiveRecord::Schema.define(:version => 20090823174840) do
 
   create_table "anthills", :force => true do |t|
     t.integer  "user_id",                              :null => false
@@ -114,6 +114,8 @@ ActiveRecord::Schema.define(:version => 20090823154607) do
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
     t.string   "identity_url"
+    t.boolean  "subscription_active",                      :default => false
+    t.string   "subscription_plan"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

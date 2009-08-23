@@ -13,6 +13,7 @@ class AddControlsToAnthill < ActiveRecord::Migration
     remove_column :anthills, :max_nursing
     remove_column :anthills, :building_count
     remove_column :anthills, :food_stock
+
     remove_column :anthills, :nursing
     remove_column :anthills, :building
     remove_column :anthills, :food

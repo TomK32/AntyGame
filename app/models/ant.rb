@@ -17,7 +17,8 @@ class Ant < ActiveRecord::Base
     :size     => "CG.. .... G..C ..T. ..AC .... ...C ..A."
   }
   SKILLS_MAP = {}
-  SKILLS.collect{|skill, map| SKILLS_MAP[skill] = map.split('') }
+  SKILLS_BASE = {}
+
 
   def generate
     @formatted_dna = nil
@@ -29,11 +30,19 @@ class Ant < ActiveRecord::Base
                           |gene| GENES[gene.to_i(2)] }.join('').unpack("a4"*8).join(' ')
   end
   
+  def update_skills_map
+    SKILLS.collect do |skill, map|
+      SKILLS_MAP[skill] ||= map.split('')
+      SKILLS_BASE[skill] ||= 5
+    end
+  end
+
   def skills
+    update_skills_map
     @skills ||= {}
     splitted_dna = formatted_dna.split('')
     SKILLS_MAP.each do |skill, map|
-      @skills[skill] = 0
+      @skills[skill] = SKILLS_BASE[skill]
       map.each_with_index do |value,key|
         next if value == '.' or value == ' '
         @skills[skill] += 1 if splitted_dna[key] == value

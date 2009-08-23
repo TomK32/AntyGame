@@ -20,7 +20,8 @@ en:
       
   users:
     show:
-      page_title: 'User {{user}}'
+      page_title: 'Player {{user}}'
+      pro: 'This player has a pro account. Watch out!'
     new:
       page_title: 'Create a new account'
       login: 'Loginname (e.g. Johnny32 or AntyAndy)'
@@ -71,6 +72,7 @@ en:
       page_title: 'Plant a new {{name}}'
       submit: 'Plant {{name}}'
     skills:
+      fertility: Fertility
       strength: Strength
       size: Size
       weight: Weight
@@ -85,7 +87,7 @@ en:
   subscriptions:
     show:
       page_title: 'Upgrade to Pro Account'
-      not_subscribed_yet: "You don't have a pro account yet. Subscribe now and give us your money."
+      not_subscribed_yet: "You don't have a pro account yet. Subscribe now and give us your money. No, seriously, we've implemented this but it's only a test account and no real money will flow for now."
       submit_cancel: 'Cancel my subscription'
       subscribe: 'Subscribe'
       thank_you: 'Thank you for upgrading your account and supporting us financially'
