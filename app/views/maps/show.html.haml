@@ -4,7 +4,10 @@
 :javascript
   context = $("canvas").getContext("2d");
   items.each(function(item) {
-    if (item.type == "Stone") {
+    if (item.type == "AnthillItem") {
+      context.fillStyle = "#c00000";
+    }
+    else if (item.type == "Stone") {
       context.fillStyle = "#c0c0c0";
     }
     else if (item.type == "Food") {
