@@ -1,1 +1,3 @@
 - @page_title = t(:'.page_title', :user => @user.login)
+
+= t(:'.pro') if @user.subscription_active?

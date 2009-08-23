@@ -36,6 +36,12 @@ class AntsController < ApplicationController
     before :new, :create do
       logger.debug(current_object)
     end
+    response_for :create do |format|
+      format.html do
+        redirect_to anthill_path(current_object.anthill)
+      end
+      format.json { render :json => true.to_json, :status => 200 }
+    end
   end
 
 end

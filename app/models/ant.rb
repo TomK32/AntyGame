@@ -6,6 +6,7 @@ class Ant < ActiveRecord::Base
   AVAILABLE_TYPES = %w(Queen Soldier Worker)
 
   validates_presence_of :dna
+  before_create :do_evolve
 
   GENES = %w(A C G T)
   # the more '.' you have in the skills the less variation there will be.
@@ -14,10 +15,11 @@ class Ant < ActiveRecord::Base
     :strength => ".AG. GC.. ...A ..GC AC.. GT.. T.TC ....",
     :weight   => "TC.C C..A ..CG TG.C .... GC.A .GG. .AAC",
     :speed    => "T.GC AGT. .AG. ..GT .CA. T... A.GT GTAT",
-    :size     => "CG.. .... G..C ..T. ..AC .... ...C ..A."
+    :size     => "CG.. .... G..C ..T. ..AC .... ...C ..A.",
+    :lifetime => "ACG. G..T .ACT ...A .GC. G.T. .C.T .AG.."
   }
   SKILLS_MAP = {}
-  SKILLS_BASE = {}
+  SKILLS_BASE = {:lifetime => 100}
 
 
   def generate
@@ -50,5 +52,12 @@ class Ant < ActiveRecord::Base
       end
     end
     @skills
+  end
+  
+  def do_evolve
+    tmp = self.dna.to_s(2).split('')
+    r = rand(tmp.size)
+    tmp[r] = (tmp[r].to_i + 1) % 2
+    self.dna = tmp.join('').to_i(2)
   end
 end

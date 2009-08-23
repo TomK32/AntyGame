@@ -1,4 +1,6 @@
 
+= render :partial => 'ants/worker', :collection => current_object.workers
+
 %p.info= t(:'.info')
 
 = error_messages_for :anthill

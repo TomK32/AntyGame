@@ -60,7 +60,7 @@ en:
       statistics: 'Statistics'
       food_stock: '{{count}} food stock'
       building_count: '{{count}} centimeter infrastructure'
-      nursing_n_of: '{{count}} being nursed of {{max}} maximum'
+      max_nursing: '{{max}} new workers can be nursed in this turn'
     index:
       page_title: 'Your anthills'
     subnavigation:
@@ -77,6 +77,9 @@ en:
       size: Size
       weight: Weight
       speed: Speed
+      lifetime: Lifetime
+    worker:
+      workers: '{{count}} workers'
   maps:
     index:
       stats: '{{anthills_count}} of {{max_anthills}}'
