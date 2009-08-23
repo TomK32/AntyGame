@@ -8,7 +8,7 @@ class CreateAnthills < ActiveRecord::Migration
       t.integer :latitude, :null => false
 
       t.string :name, :null => false
-      t.string :state, :null => 'false', :default => 'active'
+      t.string :state, :null => false, :default => 'active'
 
       t.integer :worker_count, :null => false, :default => 0
       t.integer :soldier_count, :null => false, :default => 0
