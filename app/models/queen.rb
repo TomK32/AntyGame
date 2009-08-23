@@ -4,7 +4,7 @@ class Queen < Ant
   after_create :generate_workers
 
   SKILLS[:fertility] = "T.G. TC.. .A.. .... .... A..A .A.. .CT."
-  SKILLS_BASE[:fertility] = 20
+  SKILLS_BASE[:fertility] = 25
   
   DEFAULT_WORKERS_COUNT = 10
   
