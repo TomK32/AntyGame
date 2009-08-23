@@ -1,7 +1,9 @@
 
 %p.info= t(:'.info')
 
+= error_messages_for :anthill
 - form_for :anthill, current_object, :url => anthill_path(current_object), :html => {:method => :put} do |form|
+  = hidden_field_tag :return_to, 'show'
   %p
     = form.label :food
     = form.text_field :food, :size => 3

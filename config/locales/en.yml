@@ -55,10 +55,16 @@ en:
       plant_queen: 'Plant a new queen in your anthill'
       ants: 'Ants'
       workers: 'Workers'
+      statistics: 'Statistics'
+      food_stock: '{{count}} food stock'
+      building_count: '{{count}} centimeter infrastructure'
+      nursing_n_of: '{{count}} being nursed of {{max}} maximum'
     index:
       page_title: 'Your anthills'
     subnavigation:
       create: "Create an anthill"
+    workers:
+      submit: "Change priorities"
   ants:
     new:
       page_title: 'Plant a new {{name}}'

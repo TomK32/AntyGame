@@ -20,7 +20,7 @@ class Anthill < ActiveRecord::Base
   after_create :create_item
 
   def validate
-    errors.add(t(:'.tasks_unbalanced')) if (self.food + self.building + self.nursing) != 100
+    errors.add(I18n.t(:'ants.errors.tasks_unbalanced')) if (self.food + self.building + self.nursing) != 100
   end
 
   def set_position

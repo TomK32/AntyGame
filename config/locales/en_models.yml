@@ -1,0 +1,4 @@
+en:
+  ants:
+    errors:
+      tasks_unbalanced: 'The sum of your tasks must be 100 to be not'
