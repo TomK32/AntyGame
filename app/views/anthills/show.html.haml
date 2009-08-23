@@ -1,9 +1,16 @@
 - @page_title = t(:'.page_title', :name => current_object.name, :user => current_object.user.login)
 
 %h2= t(:'.queen')
-- if current_object.queens
-  = render :partial => 'ants/queen', :collection => current_object.queens
-- else
+- if current_object.queens.empty?
   %p= t(:'.queen_missing')
   = link_to t(:'.plant_queen'), new_anthill_ant_path(current_object, :type => :queen)
+- else
+  = render :partial => 'ants/queen', :collection => current_object.queens
 
+  %h2= t(:'.ants')
+  #workers
+    %h3= t(:'.workers')
+    = render :partial => 'workers'
+
+- content_for :info do
+  %p= t(:'.info')

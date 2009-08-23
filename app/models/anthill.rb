@@ -1,6 +1,6 @@
 class Anthill < ActiveRecord::Base
 
-  attr_accessible :name
+  attr_accessible :name, :food, :building, :nursing
 
   belongs_to :user
   belongs_to :babysitter, :class_name => "User"
@@ -16,6 +16,11 @@ class Anthill < ActiveRecord::Base
   has_one :item
   
   before_validation_on_create :set_position
+  before_validation_on_create :set_tasks
+
+  def validate
+    errors.add(t(:'.tasks_unbalanced')) if (self.food + self.building + self.nursing) != 100
+  end
 
   def set_position
     # place the anthill randomly
@@ -23,5 +28,10 @@ class Anthill < ActiveRecord::Base
     
     self.latitude = rand(self.map.width)
     self.longitude = rand(self.map.height)
+  end
+  
+  def set_tasks
+    self.food = self.building = 30
+    self.nursing = 40
   end
 end

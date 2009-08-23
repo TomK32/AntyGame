@@ -1,2 +1,6 @@
 
-= queen.formatted_dna
+%dl
+  %dt= queen.formatted_dna
+  %dd
+    - queen.skills.each do |skill, value|
+      = '%s: %s' % [t(:"ants.skills.#{skill}"), value]

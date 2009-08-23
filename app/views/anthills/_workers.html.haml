@@ -1,0 +1,16 @@
+
+%p.info= t(:'.info')
+
+- form_for :anthill, current_object, :url => anthill_path(current_object), :html => {:method => :put} do |form|
+  %p
+    = form.label :food
+    = form.text_field :food, :size => 3
+  %p
+    = form.label :building
+    = form.text_field :building, :size => 3
+  %p
+    = form.label :nursing
+    = form.text_field :nursing, :size => 3
+  %p.submit
+    = submit_tag t(:'.submit')
+  
