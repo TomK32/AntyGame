@@ -1,6 +1,8 @@
 - @page_title = t(:'.page_title', :name => current_object.name, :user => current_object.user.login)
 
-= link_to 'cycle', cycle_anthill_url(current_object)
+.coordinates= "position: %i x %i" % [current_object.latitude, current_object.longitude]
+= link_to t(:'.to_map'), map_path(current_object.map)
+
 
 %h2= t(:'.statistics')
 %ul

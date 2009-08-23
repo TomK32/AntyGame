@@ -1,9 +1,10 @@
 - @page_title = @map.name
 %canvas#canvas{:width => @map.width * 8, :height => @map.height * 8}
-= javascript_tag "items = #{@items};"
 :javascript
-  context = $("canvas").getContext("2d");
-  items.each(function(item) {
+  items = #{@items};
+  context = $("#canvas")[0].getContext("2d");
+  $(items).each(function(index, item) {
+    console.log(item);
     if (item.type == "AnthillItem") {
       context.fillStyle = "#c00000";
     }

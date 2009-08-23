@@ -11,6 +11,18 @@
 
 ActiveRecord::Schema.define(:version => 20090823174840) do
 
+  create_table "actions", :force => true do |t|
+    t.integer  "item_id",                             :null => false
+    t.integer  "map_id"
+    t.integer  "babysitter_id"
+    t.string   "state",         :default => "active", :null => false
+    t.integer  "latitude"
+    t.integer  "longitude"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "anthills", :force => true do |t|
     t.integer  "user_id",                              :null => false
     t.integer  "babysitter_id"
@@ -54,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20090823174840) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "item_id"
   end
 
   create_table "maps", :force => true do |t|
