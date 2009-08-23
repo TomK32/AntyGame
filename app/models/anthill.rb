@@ -27,6 +27,6 @@ class Anthill < ActiveRecord::Base
   end
 
   def create_item
-    Item.create(:anthill => self, :map => self.map, :latitude => latitude, :longitude => longitude)
+    AnthillItem.create(:anthill => self, :map => self.map, :latitude => latitude, :longitude => longitude)
   end
 end
