@@ -6,9 +6,9 @@ en:
     title: 'antga.me'
   shared:
     navigation:
-      login: 'Login'
+      login: 'Login (OpenID supported)'
       logout: 'Logout'
-      signup: 'Signup'
+      signup: 'Register new account'
       dashboard: 'Dashboard'
     
   sessions:
@@ -53,6 +53,8 @@ en:
       queen: 'Queen'
       queen_missing: "You don't have a queen yet in your anthill."
       plant_queen: 'Plant a new queen in your anthill'
+      ants: 'Ants'
+      workers: 'Workers'
     index:
       page_title: 'Your anthills'
     subnavigation:
@@ -61,6 +63,11 @@ en:
     new:
       page_title: 'Plant a new {{name}}'
       submit: 'Plant {{name}}'
+    skills:
+      strength: Strength
+      size: Size
+      weight: Weight
+      speed: Speed
   maps:
     index:
       stats: '{{anthills_count}} of {{max_anthills}}'

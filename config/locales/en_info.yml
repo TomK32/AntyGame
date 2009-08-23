@@ -1,0 +1,6 @@
+en:
+  anthills:
+    show:
+      info: "This is where you can see and manage your anthill. There is you ant queen and stats on how many workers and soldiers you have in and outside your anthill."
+    workers:
+      info: "You can change what your ants are producing, doing etc. by moving the sliders around."
