@@ -20,12 +20,13 @@ class Ant < ActiveRecord::Base
   SKILLS.collect{|skill, map| SKILLS_MAP[skill] = map.split('') }
 
   def generate
+    @formatted_dna = nil
     self.dna = rand(2**63)
   end
 
   def formatted_dna
-    @formatted_dna ||= self.dna.to_s(2).unpack("b2"*32).collect{
-                          |gene| GENES[gene.to_i(3)] }.join('').unpack("a4"*8).join(' ')
+    @formatted_dna ||= self.dna.to_s(4).unpack("b2"*32).collect{
+                          |gene| GENES[gene.to_i(2)] }.join('').unpack("a4"*8).join(' ')
   end
   
   def skills
