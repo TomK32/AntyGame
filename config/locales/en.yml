@@ -61,6 +61,7 @@ en:
       food_stock: '{{count}} food stock'
       building_count: '{{count}} centimeter infrastructure'
       max_nursing: '{{max}} new workers can be nursed in this turn'
+      total_workers: '{{count}} workers'
     index:
       page_title: 'Your anthills'
     subnavigation:

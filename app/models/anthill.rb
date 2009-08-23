@@ -84,7 +84,7 @@ class Anthill < ActiveRecord::Base
       logger.debug('spee: %s' % all_worker_skills[:speed])
       logger.debug('q: %s' % all_worker_skills[:size])
 
-      new_worker_count = queen.skills[:fertility] / [([0,all_worker_skills[:size]].max + [0,all_worker_skills[:speed]].max), 1].max
+      new_worker_count = queen.skills[:fertility] / [([0,all_worker_skills[:size]].max + [0,all_worker_skills[:speed]].max), 1].max.to_f
       new_worker_count = [new_worker_count, self.max_nursing - new_worker_sum].max
       new_workers = self.workers.new
       new_workers.count = new_worker_count
@@ -93,6 +93,6 @@ class Anthill < ActiveRecord::Base
       new_worker_sum += new_worker_count
     end
     
-    self.save
+    self.save and self.reload
   end
 end
