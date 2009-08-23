@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :login_required, :only => :show
+  skip_before_filter :login_required, :only => [:new, :create, :show]
   
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
