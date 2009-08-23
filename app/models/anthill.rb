@@ -9,8 +9,10 @@ class Anthill < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :latitude, :longitude
 
-  has_one :queen
+  has_many :queens
   has_many :ants
+  has_many :workers
+  has_many :soldiers
   has_one :item
   
   before_validation_on_create :set_position
