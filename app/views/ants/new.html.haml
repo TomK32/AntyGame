@@ -2,7 +2,7 @@
 
 = error_messages_for :ant
 
-- form_for(:ant, :url => anthill_ants_url) do |form|
+- form_for(:ant, current_object, :url => anthill_ants_url) do |form|
   = render :partial => "form", :object => form
   %p.submit
     = submit_tag t(:'.submit', :name => current_model_name)

@@ -1,8 +1,8 @@
 - @page_title = t(:'.page_title', :name => current_object.name, :user => current_object.user.login)
 
 %h2= t(:'.queen')
-- if current_object.queen
-  = render :partial => 'ants/queen', :object => current_object.queen
+- if current_object.queens
+  = render :partial => 'ants/queen', :collection => current_object.queens
 - else
   %p= t(:'.queen_missing')
   = link_to t(:'.plant_queen'), new_anthill_ant_path(current_object, :type => :queen)
