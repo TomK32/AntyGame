@@ -3,7 +3,7 @@
 = error_messages_for :anthill
 = render :partial => 'intro'
 
-- form_for(:anthill, @anthill || current_user.anthills.new, anthills_url) do |form|
+- form_for(:anthill, @anthill || current_user.anthills.new, :url => anthills_url) do |form|
   = render :partial => 'form', :object => form
   
   %p.submit
