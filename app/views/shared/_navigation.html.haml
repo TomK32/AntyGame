@@ -5,6 +5,7 @@
       = link_to_current_user :content_method => :login
     %li= link_to t(:'.logout'), logout_path
     %li= link_to t(:'.dashboard'), dashboard_path
+    %li= link_to t(:'.subscription'), subscription_path unless current_user.subscription_active?
   - else
     %li= link_to t(:'.login'),  login_path
     %li= link_to t(:'.signup'), signup_path

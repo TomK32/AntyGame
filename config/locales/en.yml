@@ -10,6 +10,7 @@ en:
       logout: 'Logout'
       signup: 'Register new account'
       dashboard: 'Dashboard'
+      subscription: 'Upgrade your account '
     
   sessions:
     new:
@@ -81,3 +82,13 @@ en:
       open: 'open for all'
       active: 'active'
       inactive: 'inactive'
+  subscriptions:
+    show:
+      page_title: 'Upgrade to Pro Account'
+      not_subscribed_yet: "You don't have a pro account yet. Subscribe now and give us your money."
+      submit_cancel: 'Cancel my subscription'
+      subscribe: 'Subscribe'
+      thank_you: 'Thank you for upgrading your account and supporting us financially'
+      cancel_subscription: 'We will definitely feel sorry about, but if you dog has eaten all your ants you may as well cancel your subscription.'
+    subscription_canceled: "You're subscription has been cancled, your pro account degraded. Meh."
+    not_subscribed: 'You tried to unsubscribe but you are not subscribed at all. Send us a mail if you think this is an error.'

@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resource :subscription
   map.resources :anthills, :has_many => :ants
   map.resources :maps
 

@@ -1,0 +1,13 @@
+- @page_title = t(:'.page_title')
+
+- if current_user.subscription_active?
+  %p= t(:'.thank_you')
+  
+  %p= t(:'.cancel_subscription')
+  - form_tag subscription_path, :method => :delete do
+    = submit_tag t(:'.submit_cancel')
+- else
+  %p= t(:'.not_subscribed_yet')
+  - form_tag Spreedly.subscribe_url(current_user.id, '1791'), :method => :get do
+    = submit_tag t(:'.subscribe'), :name => nil
+  
