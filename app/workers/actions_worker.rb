@@ -1,5 +1,5 @@
 class ActionsWorker < Workling::Base
-  def process
+  def cycle(options)
     loop do
       Action.process_active
       sleep 3
