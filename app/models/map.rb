@@ -3,6 +3,7 @@ class Map < ActiveRecord::Base
   has_many :stones
   has_many :foods
   has_many :anthills
+  has_many :actions
 
   validates_presence_of :name, :width, :height
   validates_uniqueness_of :name
