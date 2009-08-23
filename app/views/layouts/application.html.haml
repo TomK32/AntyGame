@@ -16,10 +16,8 @@
   #content
     = yield
   
-  %ul#navigation
+  #navigation
     = render :partial => 'shared/navigation'
-    = render :partial => 'users/user_bar'
-    = yield :sub_navigation
   #footer
     (C) 2009 by
     = link_to 'antga.me', root_url
@@ -27,3 +25,5 @@
     =link_to 'railsrumble 2009', 'http://r09.railsrumble.com'
     Read our
     = link_to 'blog', 'http://blog.antga.me'
+
+  = render :partial => 'shared/google_analytics'

@@ -1,9 +1,13 @@
-- if logged_in?
-  %li
-    Logged in as
-    = link_to_current_user :content_method => :login
-  %li= link_to t(:'.logout'), logout_path
-  %li= link_to t(:'.dashboard'), dashboard_path
-- else
-  %li= link_to t(:'.login'),  login_path
-  %li= link_to t(:'.signup'), signup_path
+%ul
+  - if logged_in?
+    %li
+      Logged in as
+      = link_to_current_user :content_method => :login
+    %li= link_to t(:'.logout'), logout_path
+    %li= link_to t(:'.dashboard'), dashboard_path
+  - else
+    %li= link_to t(:'.login'),  login_path
+    %li= link_to t(:'.signup'), signup_path
+- if yield :subnavigation
+  %ul#subnavigation
+    = yield :subnavigation

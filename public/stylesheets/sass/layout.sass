@@ -1,17 +1,25 @@
 @import colors.sass
 
 html
-  :font-family sans-serif
+  :font-family Verdana, Geneva, sans-serif
+  :font-size x-small
   color = !color_text
   :background-color = !color_background
 
 html, body
   padding: 0
   margin: 0
+body
+  :font-size 130%
+
+#app_title, h1, h2
+  :font-family "Palatino Linotype", "Book Antiqua", "Palatino", serif
 a
   color = !color_links
   :text-decoration none
-
+a:hover, a:active, a:focus
+  :text-decoration underline
+  color = !color_links - #333
 #content, #footer, #header h1, #header #app_title
   :padding 0 20px 5px 20px
   margin: 0
@@ -36,6 +44,8 @@ a
   :position absolute
   :top 0
   :right 0
+  ul
+    :margin 6px 10px 4px 0
   li
     :display inline
     :margin 0 10px
